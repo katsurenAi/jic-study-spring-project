@@ -8,4 +8,5 @@ interface ServiceInterFace<T> {
      * @return T データ
      */
     public T getAll();
+    
 }

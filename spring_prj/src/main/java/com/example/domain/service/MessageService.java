@@ -24,27 +24,25 @@ public class MessageService implements ServiceInterFace<List<MessageEntity>>  {
 
     /**
      * メッセージ情報を全て取得します
-     * 
-     * @return List<AccountEntity> アカウント情報リスト
+     * @return List<メッセージ> メッセージ情報リスト
      */
     public List<MessageEntity> getAll() {
         return messageRepository.findAll();
     }
 
     /**
-     * メッセージを保存します
-     * 
+     * メッセージ情報を保存します
+     * @return List<AccountEntity> メッセージ情報リスト
      */
     public void saveMessage(Map massageParam) {
         List<MessageEntity> entities = Arrays.asList(
                 new MessageEntity(
-                    7, //メッセージのID
-                    massageParam.get("messageTitle").toString(),//メッセージのタイトル
-                    massageParam.get("messageDetail").toString(),//メッセージの詳細
-                    massageParam.get("submitAccount").toString()//メッセージのsubmitAccount
+                    7, //メッセージID
+                    massageParam.get("messageTitle").toString(),//メッセージタイトル
+                    massageParam.get("messageDetail").toString(),//メッセージ詳細
+                    massageParam.get("submitAccount").toString()//メッセージsubmitAccount
                     ));              
-                
+                //入力された値を保存する
                  messageRepository.saveAll(entities);
         }
-
 }

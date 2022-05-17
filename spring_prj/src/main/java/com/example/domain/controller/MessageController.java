@@ -10,7 +10,7 @@ import com.example.domain.entity.MessageEntity;
 import com.example.domain.service.MessageService;
 
 /**
- * アカウント情報に対してのリクエストを処理します
+ * メッセージ情報に対してのリクエストを処理します
  */
 @RestController
 @RequestMapping("message")
@@ -19,10 +19,9 @@ public class MessageController {
     // Beenからserviceクラスを呼び出し
     @Autowired
     MessageService messageService;
-      /**
-     * メッセージテーブルに登録されている情報を全件取得します
-     * 
-     * @return List<AccountEntity> アカウント情報リスト
+    /**
+     * メッセージ情報を全件取得
+     * @return List<AccountEntity> メッセージ情報リスト
      */
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<MessageEntity> getAll() {
@@ -30,8 +29,7 @@ public class MessageController {
     }
   
     /**
-     * 投稿されたメッセージを保存します
-     * 
+     * メッセージ情報を保存します
      * @param massageParam
      * @return void
      */

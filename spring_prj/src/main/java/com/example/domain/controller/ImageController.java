@@ -20,9 +20,8 @@ public class ImageController {
     ImageService imageService;
 
     /**
-     * 1.アカウント情報を全件取得します
-     * 
-     * @return List<ImageEntity> アカウント情報リスト
+     * アカウント情報を全件取得します
+     * @return List<ImageEntity> image情報リスト
      */
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<ImageEntity> getAll() {

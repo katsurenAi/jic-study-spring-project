@@ -22,7 +22,6 @@ public class TweetController {
 
     /**
      * ツイート情報を全件取得します
-     * 
      * @return List<TweetEntity> アカウント情報リスト
      */
     @RequestMapping(value = "/all", method = RequestMethod.GET)
@@ -31,18 +30,16 @@ public class TweetController {
     }
 
     /**
-     * ツイートidを全件取得します
-     * 
+     * ツイート情報を全件取得します
      * @return List<TweetEntity> アカウント情報リスト
      */
     @RequestMapping(value = "/get/id", method = RequestMethod.GET)
     public List<TweetEntity> findById() {
         return TweetService.getAll();
     }
-
-  /**
+    
+    /**
      * ツイート情報を全件取得します
-     * 
      * @param tweetString
      * @return void
      */

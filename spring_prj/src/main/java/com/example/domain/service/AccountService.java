@@ -24,16 +24,14 @@ public class AccountService extends AbstractService<AccountEntity, List<AccountE
 
     /**
      * アカウント情報を全て取得します
-     * 
      * @return List<AccountEntity> アカウント情報リスト
      */
     public List<AccountEntity> getAll() {
         return accountRepository.findAll();
     }
 
-        /**
-     * 2.IDからツイート情報を取得して返却します
-     * 
+    /**
+     * IDからツイート情報を取得して返却します
      * @return TweetEntity ツイート情報
      */
     public AccountEntity findById(int id) {
@@ -41,29 +39,42 @@ public class AccountService extends AbstractService<AccountEntity, List<AccountE
     }
 
     /**
-     * 3.アカウントを保存します
-     * 
-     * @param StringString  文字
+     * 入力されたアカウントを保存します
+     * @param accountParam
      * @return void
-     * /**
-     * 3.ツイートを保存します
-     * 
-     * （アカウントサービスに移動）
-     * 4.データを取り出す
-     * 5.AccountEntity型のリストを作成する　
-     * 6.entityに取り込む　entityはコンストラクタ
-     * 7.リポジトリはアカウントリポジトリを継承しているので、このデータを保存できる
      */
     public void saveAcccount(Map accountParam) {
         List<AccountEntity> entities = Arrays.asList(
                 new AccountEntity(
                     7, //ID
                     accountParam.get("email").toString(),//メールアドレス
-                    accountParam.get("password").toString(),//PASS
+                    accountParam.get("password").toString(),//パスワード
                     accountParam.get("userName").toString(),//ユーザー名 
                     accountParam.get("accountDetails").toString()//アカウントの詳細
                     ));               
              accountRepository.saveAll(entities);
         }
 
-}
+    /**
+     * アカウント名と一致する情報を検索します
+     * @param userName 
+     * @return void
+     */
+    public List<AccountEntity> serchInfo(String userName) {
+        //アカウント名で検索    
+        return accountRepository.findByUserName(userName);
+        
+    }
+
+    /**
+     * アカウントIDと一致する情報を削除します。
+     * @param id  文字
+     * @return void
+     */
+    public void delete(int id) {
+        //削除する処理
+        accountRepository.deleteById(id);
+        
+    }
+
+} 

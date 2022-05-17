@@ -22,7 +22,6 @@ public class TweetService extends AbstractService<TweetEntity, List<TweetEntity>
 
     /**
      * ツイートを全取得して返却します
-     * 
      * @return List<TweetEntity> ツイート情報リスト
      */
     public List<TweetEntity> getAll() {
@@ -31,7 +30,6 @@ public class TweetService extends AbstractService<TweetEntity, List<TweetEntity>
 
     /**
      * IDからツイート情報を取得して返却します
-     * 
      * @return TweetEntity ツイート情報
      */
     public TweetEntity findById(int id) {
@@ -40,13 +38,14 @@ public class TweetService extends AbstractService<TweetEntity, List<TweetEntity>
 
     /**
      * ツイートを保存します
-     * 
      * @param String tweetString ツイート文字
      * @return void
      */
     public void storeTweet(String tweetString) {
         List<TweetEntity> entities = Arrays.asList(
-                new TweetEntity(0, tweetString, "1"));
+                new TweetEntity(0,//ツイートID
+                 tweetString, //ツイート文字
+                 "1"));//アカウントID
         tweetRepository.saveAll(entities);
     }
 }

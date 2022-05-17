@@ -9,7 +9,7 @@ import com.example.domain.repository.ImageRepository;
 
 import java.util.List;
 /**
- * アカウント情報を操作するビジネスロジックを実装します
+ * 画像情報を操作するビジネスロジックを実装します
  */
 @Service
 @Transactional
@@ -20,8 +20,7 @@ public class ImageService implements ServiceInterFace<List<ImageEntity>> {
 
     /**
      * 画像情報を全て取得します
-     * 
-     * @return List<ImageEntity> アカウント情報リスト
+     * @return List<ImageEntity> 画像情報リスト
      */
     public List<ImageEntity> getAll() {
         return imageRepository.findAll();
