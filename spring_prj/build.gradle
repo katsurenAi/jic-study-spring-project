@@ -21,6 +21,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'	
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'//追加
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
@@ -49,3 +50,9 @@ bootRun { //debug用にgradleからJVMへ引数を渡す
 	// 上記の記述で、以下の引数がjdkに渡される
 	jvmArgs=["-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:5050"]
 }
+
+//追記　勝連
+
+
+
+//↑まで
